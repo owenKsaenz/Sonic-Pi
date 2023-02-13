@@ -1,0 +1,52 @@
+use_bpm 168
+use_synth :blade
+use_synth_defaults amp: 5
+live_loop :stranger do
+  play :c2
+  sleep 0.5
+  play :e2
+  sleep 0.5
+  play :g2
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  play :c3
+  sleep 0.5
+  play :b2
+  sleep 0.5
+  play :g2
+  sleep 0.5
+  play :e2
+  sleep 0.5
+end
+live_loop :drums do
+  sample :drum_bass_soft, amp:3
+  sleep 0.5
+  sample :drum_bass_soft, amp:3
+  sleep 1.5
+end
+sleep 16
+play 50,amp:20
+sleep 14
+play 30,amp:20
+sleep 2
+play 40,amp:20
+sleep 14
+play 40,amp:20
+sleep 2
+play 35,amp:20
+sleep 14
+play 35,amp:20
+sleep 2
+play 30,amp:20
+sleep 12
+play 40,amp:20
+sleep 1.5
+play 37.5,amp:20
+sleep 1.5
+play 35,amp:20
+
+
+
+
+
