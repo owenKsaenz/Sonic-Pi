@@ -1,0 +1,51 @@
+use_bpm 60
+4. times do
+  sample :drum_snare_soft,amp:5
+  sample :drum_bass_hard,amp:3
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+  sample :drum_bass_hard,amp:3
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+end
+4. times do
+  sample :drum_snare_soft,amp:5
+  sample :drum_bass_hard,amp:3
+  sleep 1
+  sample :drum_bass_hard,amp:3
+  sleep 1
+end
+4. times do
+  sample :drum_snare_soft,amp:5
+  sleep 2
+end
+4. times do
+  sample :drum_cymbal_hard,amp:5
+  sample :drum_splash_hard,amp:3
+  sleep 0.5
+  sample :drum_cymbal_hard,amp:5
+  sleep 0.5
+  sample :drum_cymbal_hard,amp:5
+  sleep 0.5
+  sample :drum_cymbal_hard,amp:5
+  sleep 0.5
+  
+end
+4. times do
+  sample :drum_snare_soft,amp:5
+  sample :drum_bass_hard,amp:3
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+  sample :drum_bass_hard,amp:3
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+  sample :drum_cymbal_closed,amp:3
+  sleep 0.5
+end
+
