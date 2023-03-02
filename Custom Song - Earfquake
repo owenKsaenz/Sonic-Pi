@@ -1,3 +1,4 @@
+#custom song project
 define :main do
   live_loop :main1 do
     use_synth :blade
@@ -187,58 +188,96 @@ define :main do
   end
 end
 define :main2 do
-  use_bpm 79
-  play :a5
-  sleep 1
-  play :a5
-  sleep 0.25
-  play :g5
-  sleep 0.25
-  play :f5
-  sleep 2
-  play :f5
-  sleep 0.25
-  play :f5
-  sleep 1.25
-  play :e5
-  sleep 3
-  play :a5
-  sleep 1
-  play :a5
-  sleep 0.25
-  play :g5
-  sleep 0.25
-  play :f5
-  sleep 1
-  play :f5
-  sleep 0.25
-  play :f5
-  sleep 1.25
-  play :e5
-  sleep 3.5
-  play :f5
-  sleep 0.5
-  play :f5
-  sleep 0.5
-  play :f5
-  sleep 0.5
-  play :a5
-  sleep 0.5
-  play :a5
-  sleep 0.5
-  play :f5
-  sleep 0.5
-  play :f5
-  sleep 0.5
-  play :e5
-  sleep 0.5
-  play :e5
-  sleep 0.5
-  play :f5
-  sleep 1
-  play :e5
-  sleep 3
+  live_loop :main2 do
+    1.times do
+      use_bpm 79
+      play :a5,amp:2
+      sleep 1
+      play :a5,amp:2
+      sleep 0.25
+      play :g5,amp:2
+      sleep 0.25
+      play :f5,amp:2
+      sleep 2
+      play :f5,amp:2
+      sleep 0.25
+      play :f5,amp:2
+      sleep 1.25
+      play :e5,amp:2
+      sleep 3
+      play :a5
+      sleep 1
+      play :a5
+      sleep 0.25
+      play :g5
+      sleep 0.25
+      play :f5
+      sleep 2
+      play :f5
+      sleep 0.25
+      play :f5
+      sleep 1.25
+      play :e5
+      sleep 3
+      play :a5
+      sleep 1
+      play :a5
+      sleep 0.25
+      play :g5
+      sleep 0.25
+      play :f5
+      sleep 1
+      play :f5
+      sleep 0.25
+      play :f5
+      sleep 1.25
+      play :e5
+      sleep 3.5
+      play :f5
+      sleep 0.5
+      play :f5
+      sleep 0.5
+      play :f5
+      sleep 0.5
+      play :a5
+      sleep 0.5
+      play :a5
+      sleep 0.5
+      play :f5
+      sleep 0.5
+      play :f5
+      sleep 0.5
+      play :e5
+      sleep 0.5
+      play :e5
+      sleep 0.5
+      play :f5
+      sleep 1
+      play :e5
+      sleep 3
+    end
+    stop
+  end
 end
+define :start do
+  x = 0
+  34.times do
+    sample :drum_cymbal_closed,amp:x
+    sleep 0.1
+    x = x + 0.1
+  end
+end
+define :done do
+  x = 3.4
+  34.times do
+    sample :drum_cymbal_closed,amp:x
+    sleep 0.1
+    x = x - 0.1
+  end
+  sample :drum_splash_hard,amp:3
+end
+
+puts ("Happy New Year")
 define :intro do
   use_synth :blade
   play :f3
@@ -368,6 +407,108 @@ define :background2 do
   live_loop :b2 do
     8.times do
       use_synth :dsaw
+      play :a5, sustain:0.5,amp:0.25
+      sleep 1
+      play :f5,amp:0.25
+      sleep 0.5
+      play :a5,amp:0.25
+      sleep 1
+      play :f5,amp:0.25
+      sleep 0.5
+      play :f5,amp:0.25
+      sleep 0.25
+      play :f5,amp:0.25
+      sleep 0.25
+      play :f5,amp:0.25
+      sleep 0.5
+      play :g5, sustain:0.75,amp:0.25
+      sleep 1.5
+      play :f5,amp:0.25
+      sleep 1
+      play :e5,amp:0.25
+      sleep 1.5
+      play :a5, sustain:0.5,amp:0.25
+      sleep 1
+      play :f5,amp:0.25
+      sleep 0.5
+      play :a5,amp:0.25
+      sleep 1
+      play :f5,amp:0.25
+      sleep 0.5
+      play :f5,amp:0.25
+      sleep 0.25
+      play :f5,amp:0.25
+      sleep 0.75
+      play :e5,sustain:0.75,amp:0.25
+      sleep 2
+      play :f5,sustain:0.5,amp:0.25
+      sleep 2
+      
+      
+    end
+    stop
+  end
+end
+define :background3 do
+  live_loop :b3 do
+    16.times do
+      use_synth :blade
+      play :f3,amp:2
+      sleep 0.25
+      play :f3,amp:2
+      sleep 2.25
+      play :g3,amp:2
+      sleep 0.5
+      play :f3,amp:2
+      sleep 0.75
+      play :g3,amp:2
+      sleep 0.25
+      play :e3,amp:2
+      sleep 0.25
+      play :e3,amp:2
+      sleep 2.25
+      play :e3,amp:2
+      sleep 0.5
+      play :e3,amp:2
+      sleep 1
+      
+    end
+    stop
+  end
+end
+
+define :backgroundb do
+  live_loop :backgroundb do
+    3.times do
+      use_synth :piano
+      play :a3,amp:3
+      play :f3,amp:3
+      play :d3,amp:3
+      play :b2,amp:3
+      sleep 4
+      play :g3,amp:3
+      play :e3,amp:3
+      play :c3,amp:3
+      play :a2,amp:3
+      sleep 4
+      play :f3,amp:3
+      play :d3,amp:3
+      play :b2,amp:3
+      play :g2,amp:3
+      sleep 4
+      play :g3,amp:3
+      play :e3,amp:3
+      play :c3,amp:3
+      play :a2,amp:3
+      sleep 4
+    end
+    stop
+  end
+end
+define :background2b do
+  live_loop :b2b do
+    4.times do
+      use_synth :dsaw
       play :a5, sustain:0.5,amp:0.5
       sleep 1
       play :f5,amp:0.5
@@ -410,9 +551,39 @@ define :background2 do
     stop
   end
 end
+define :background3b do
+  live_loop :b3b do
+    4.times do
+      use_synth :blade
+      play :f3,amp:2
+      sleep 0.25
+      play :f3,amp:2
+      sleep 2.25
+      play :g3,amp:2
+      sleep 0.5
+      play :f3,amp:2
+      sleep 0.75
+      play :g3,amp:2
+      sleep 0.25
+      play :e3,amp:2
+      sleep 0.25
+      play :e3,amp:2
+      sleep 2.25
+      play :e3,amp:2
+      sleep 0.5
+      play :e3,amp:2
+      sleep 1
+      
+    end
+    stop
+  end
+end
+use_bpm 60
 
+with_fx :compressor do
+  start
+end
 use_bpm 79
-
 with_fx :autotuner do
   intro
 end
@@ -435,6 +606,9 @@ end
 with_fx :compressor do
   background2
 end
+with_fx :compressor do
+  background3
+end
 sleep 127.5
 with_fx :autotuner do
   carti
@@ -446,6 +620,21 @@ end
 with_fx :autotuner do
   mid2
 end
-sleep 28
-
-
+sleep 30.75
+with_fx :compressor do
+  main2
+end
+sleep 1
+with_fx :compressor do
+  backgroundb
+end
+with_fx :compressor do
+  background2b
+end
+with_fx :compressor do
+  background3b
+end
+sleep 59
+with_fx :compressor do
+  done
+end
