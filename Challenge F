@@ -1,7 +1,22 @@
+#challenge F
+use_bpm 60
 x = 21
-
-88.times do
-  play x
-  sleep 0.25
-  n = n + 1
+y = 2
+live_loop :stuff do
+  8.times do
+    11.times do
+      play x
+      sleep y
+      x = x + 1
+    end
+    y = y - 0.25
+  end
+  8.times do
+    11.times do
+      play x
+      sleep y
+      x = x - 1
+    end
+    y = y + 0.25
+  end
 end
