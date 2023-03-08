@@ -1,7 +1,7 @@
-x = 1
-10.times do
-  puts (x)
-  sleep 0.5
-  x = x + 1
+n = 21
+
+88.times do
+  play n
+  sleep 0.25
+  n = n + 1
 end
-puts ("Happy New Year")
