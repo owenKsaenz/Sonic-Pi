@@ -1,7 +1,7 @@
-n = 21
+x = 21
 
 88.times do
-  play n
+  play x
   sleep 0.25
   n = n + 1
 end
