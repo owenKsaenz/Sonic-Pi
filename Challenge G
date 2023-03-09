@@ -1,0 +1,24 @@
+# Seven Nation Army by The White Stripes
+stuff = ["e3","e3","g3","e3","d3","c3","b2"]
+pause = [1.5,0.5,0.75,0.75,0.5,2,2]
+use_bpm 120
+use_synth :fm
+use_synth_defaults sustain: 0.25
+i = 0
+x = 0
+live_loop :main_theme do
+  with_fx :distortion do
+    8.times do
+      7.times do
+        play(stuff[i])
+        sleep(pause[x])
+        x = x + 1
+        i = i +  1
+        
+      end
+      i = 0
+      x = 0
+    end
+    stop
+  end
+end
