@@ -1,4 +1,8 @@
 #custom song project
+stuff = [:f3,:f3,:g3,:f3,:g3,:e3,:e3,:e3,:e3,]
+stuff2 = [0.25,2.25,0.5,0.75,0.25,0.25,2.25,0.5,1,]
+y=0
+z=0
 define :main do
   live_loop :main1 do
     use_synth :blade
@@ -277,29 +281,20 @@ define :done do
   sample :drum_splash_hard,amp:3
 end
 
-puts ("Happy New Year")
 define :intro do
   use_synth :blade
-  play :f3
-  sleep 0.25
-  play :f3
-  sleep 2.25
-  play :g3
-  sleep 0.5
-  play :f3
-  sleep 0.75
-  play :g3
-  sleep 0.25
-  play :e3
-  sleep 0.25
-  play :e3
-  sleep 2.25
-  play :e3
-  sleep 0.5
-  play :e3
-  sleep 1
-  
+  3.times do
+    9.times do
+      play stuff[y]
+      sleep stuff2[z]
+      y = y + 1
+      z = z + 1
+    end
+    y = 0
+    z = 0
+  end
 end
+
 define :intro2 do
   use_synth :blade
   play :f3
@@ -584,12 +579,6 @@ with_fx :compressor do
   start
 end
 use_bpm 79
-with_fx :autotuner do
-  intro
-end
-with_fx :autotuner do
-  intro
-end
 with_fx :autotuner do
   intro
 end
