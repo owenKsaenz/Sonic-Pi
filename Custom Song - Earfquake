@@ -284,7 +284,6 @@ define :done do
   end
   sample :drum_splash_hard,amp:3
 end
-
 define :intro do
   live_loop :ido do
     use_synth :blade
@@ -347,7 +346,6 @@ define :carti do
     stop
   end
 end
-
 define :background do
   live_loop :background do
     8.times do
@@ -416,9 +414,7 @@ define :background2 do
       sleep 2
       play :f5,sustain:0.5,amp:0.25
       sleep 2
-      
-      
-    end
+       end
     stop
   end
 end
@@ -444,12 +440,10 @@ define :background3 do
       sleep 0.5
       play :e3,amp:2
       sleep 1
-      
-    end
+      end
     stop
   end
 end
-
 define :backgroundb do
   live_loop :backgroundb do
     3.times do
@@ -518,9 +512,7 @@ define :background2b do
       sleep 2
       play :f5,sustain:0.5,amp:0.5
       sleep 2
-      
-      
-    end
+      end
     stop
   end
 end
@@ -546,13 +538,11 @@ define :background3b do
       sleep 0.5
       play :e3,amp:2
       sleep 1
-      
-    end
+      end
     stop
   end
 end
 use_bpm 60
-
 with_fx :compressor do
   start
 end
