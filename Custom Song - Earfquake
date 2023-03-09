@@ -1,8 +1,12 @@
 #custom song project
 stuff = [:f3,:f3,:g3,:f3,:g3,:e3,:e3,:e3,:e3,]
-stuff2 = [0.25,2.25,0.5,0.75,0.25,0.25,2.25,0.5,1,]
+stuff2 = [:f3,:f3,:g3,:f3,:g3,:e3,:e3,]
+stuff3 = [0.25,2.25,0.5,0.75,0.25,0.25,2.25,0.5,1,]
+stuff4 = [0.25,2.25,0.5,0.75,0.25,0.25,2.25]
 y=0
 z=0
+a=0
+b=0
 define :main do
   live_loop :main1 do
     use_synth :blade
@@ -282,57 +286,31 @@ define :done do
 end
 
 define :intro do
-  use_synth :blade
-  3.times do
-    9.times do
-      play stuff[y]
-      sleep stuff2[z]
-      y = y + 1
-      z = z + 1
+  live_loop :ido do
+    use_synth :blade
+    3.times do
+      9.times do
+        play stuff[y]
+        sleep stuff3[z]
+        y = y + 1
+        z = z + 1
+      end
+      y = 0
+      z = 0
     end
-    y = 0
-    z = 0
+    7.times do
+      play stuff2[a]
+      sleep stuff4[b]
+      a=a+1
+      b=b+1
+    end
+    stop
   end
 end
-
 define :intro2 do
-  use_synth :blade
-  play :f3
-  sleep 0.25
-  play :f3
-  sleep 2.25
-  play :g3
-  sleep 0.5
-  play :f3
-  sleep 0.75
-  play :g3
-  sleep 0.25
-  play :e3
-  sleep 0.25
-  play :e3
-  sleep 3
-end
-define :mid do
-  use_synth :blade
-  live_loop :mid do
-    3.times do
-      play :f3
-      sleep 0.25
-      play :f3
-      sleep 2.25
-      play :g3
-      sleep 0.5
-      play :f3
-      sleep 0.75
-      play :g3
-      sleep 0.25
-      play :e3
-      sleep 0.25
-      play :e3
-      sleep 2.25
-      play :e3
-      sleep 0.5
-      play :e3
+  live_loop :adlib do
+    1.times do
+      sample "C:/Users/owen_saenz/Downloads/Tyler, The Creator - EARFQUAKE (Acapella - HQ) ft. Playboi Cart 2i.wav",amp: 1.25
       sleep 1
     end
     stop
@@ -579,12 +557,14 @@ with_fx :compressor do
   start
 end
 use_bpm 79
-with_fx :autotuner do
+with_fx :compressor do
   intro
 end
+sleep 0.4
 with_fx :autotuner do
   intro2
 end
+sleep 30.6
 with_fx :compressor do
   main
 end
