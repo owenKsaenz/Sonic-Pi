@@ -213,55 +213,56 @@ define :main2 do
       sleep 1.25
       play :e5,amp:2
       sleep 3
-      play :a5
+      play :a5,amp:2
       sleep 1
-      play :a5
+      play :a5,amp:2
       sleep 0.25
-      play :g5
+      play :g5,amp:2
       sleep 0.25
-      play :f5
+      play :f5,amp:2
       sleep 2
-      play :f5
+      play :f5,amp:2
       sleep 0.25
-      play :f5
+      play :f5,amp:2
       sleep 1.25
-      play :e5
+      play :e5,amp:2
       sleep 3
-      play :a5
+      play :a5,amp:2
       sleep 1
-      play :a5
+      play :a5,amp:2
       sleep 0.25
-      play :g5
+      play :g5,amp:2
       sleep 0.25
-      play :f5
+      play :f5,amp:2
       sleep 1
-      play :f5
+      play :f5,amp:2
       sleep 0.25
-      play :f5
+      play :f5,amp:2
       sleep 1.25
-      play :e5
+      play :e5,amp:2
       sleep 3.5
-      play :f5
+      play :f5,amp:2
       sleep 0.5
-      play :f5
+      play :f5,amp:2
       sleep 0.5
-      play :f5
+      play :f5,amp:2
       sleep 0.5
-      play :a5
+      play :a5,amp:2
       sleep 0.5
-      play :a5
+      play :a5,amp:2
       sleep 0.5
-      play :f5
+      play :f5,amp:2
       sleep 0.5
-      play :f5
+      play :f5,amp:2
       sleep 0.5
-      play :e5
+      play :e5,amp:2
       sleep 0.5
-      play :e5
+      play :e5,amp:2
       sleep 0.5
-      play :f5
+      play :f5,amp:2
       sleep 1
-      play :e5
+      play :e5,amp:2
+     
       sleep 3
     end
     stop
@@ -284,6 +285,7 @@ define :done do
   end
   sample :drum_splash_hard,amp:3
 end
+
 define :intro do
   live_loop :ido do
     use_synth :blade
@@ -315,9 +317,36 @@ define :intro2 do
     stop
   end
 end
+define :mid do
+  live_loop :mid do
+    3.times do
+      use_synth :blade
+      play :f3,amp:2
+      sleep 0.25
+      play :f3,amp:2
+      sleep 2.25
+      play :g3,amp:2
+      sleep 0.5
+      play :f3,amp:2
+      sleep 0.75
+      play :g3,amp:2
+      sleep 0.25
+      play :e3,amp:2
+      sleep 0.25
+      play :e3,amp:2
+      sleep 2.25
+      play :e3,amp:2
+      sleep 0.5
+      play :e3,amp:2
+      sleep 1
+      
+    end
+    stop
+  end
+end
 define :mid2 do
   use_synth :blade
-  live_loop :mid do
+  live_loop :mid2 do
     1.times do
       play :f3
       sleep 0.25
@@ -340,12 +369,13 @@ end
 define :carti do
   live_loop :sample do
     1.times do
-      sample "C:/Users/owen_saenz/Downloads/Tyler, The Creator - EARFQUAKE (Acapella - HQ) ft. Playboi Carti.wav"
+      sample "C:/Users/owen_saenz/Downloads/sample.wav"
       sleep 1
     end
     stop
   end
 end
+
 define :background do
   live_loop :background do
     8.times do
@@ -414,7 +444,9 @@ define :background2 do
       sleep 2
       play :f5,sustain:0.5,amp:0.25
       sleep 2
-       end
+      
+      
+    end
     stop
   end
 end
@@ -440,10 +472,12 @@ define :background3 do
       sleep 0.5
       play :e3,amp:2
       sleep 1
-      end
+      
+    end
     stop
   end
 end
+
 define :backgroundb do
   live_loop :backgroundb do
     3.times do
@@ -512,7 +546,7 @@ define :background2b do
       sleep 2
       play :f5,sustain:0.5,amp:0.5
       sleep 2
-      end
+       end
     stop
   end
 end
@@ -538,11 +572,13 @@ define :background3b do
       sleep 0.5
       play :e3,amp:2
       sleep 1
-      end
+      
+    end
     stop
   end
 end
 use_bpm 60
+
 with_fx :compressor do
   start
 end
