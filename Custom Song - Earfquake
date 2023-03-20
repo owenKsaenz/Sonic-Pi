@@ -262,7 +262,7 @@ define :main2 do
       play :f5,amp:2
       sleep 1
       play :e5,amp:2
-     
+      
       sleep 3
     end
     stop
@@ -285,7 +285,6 @@ define :done do
   end
   sample :drum_splash_hard,amp:3
 end
-
 define :intro do
   live_loop :ido do
     use_synth :blade
@@ -321,25 +320,24 @@ define :mid do
   live_loop :mid do
     3.times do
       use_synth :blade
-      play :f3,amp:2
+      play :f3
       sleep 0.25
-      play :f3,amp:2
+      play :f3
       sleep 2.25
-      play :g3,amp:2
+      play :g3
       sleep 0.5
-      play :f3,amp:2
+      play :f3
       sleep 0.75
-      play :g3,amp:2
+      play :g3
       sleep 0.25
-      play :e3,amp:2
+      play :e3
       sleep 0.25
-      play :e3,amp:2
+      play :e3
       sleep 2.25
-      play :e3,amp:2
+      play :e3
       sleep 0.5
-      play :e3,amp:2
+      play :e3
       sleep 1
-      
     end
     stop
   end
@@ -375,34 +373,13 @@ define :carti do
     stop
   end
 end
-
-define :background do
-  live_loop :background do
-    8.times do
-      use_synth :piano
-      play :a3,amp:3
-      play :f3,amp:3
-      play :d3,amp:3
-      play :b2,amp:3
-      sleep 4
-      play :g3,amp:3
-      play :e3,amp:3
-      play :c3,amp:3
-      play :a2,amp:3
-      sleep 4
-      play :f3,amp:3
-      play :d3,amp:3
-      play :b2,amp:3
-      play :g2,amp:3
-      sleep 4
-      play :g3,amp:3
-      play :e3,amp:3
-      play :c3,amp:3
-      play :a2,amp:3
-      sleep 4
-    end
-    stop
-  end
+define :background do |a,b,c,d|
+  use_synth :piano
+  play a,amp:3
+  play b,amp:3
+  play c,amp:3
+  play d,amp:3
+  sleep 4
 end
 define :background2 do
   live_loop :b2 do
@@ -443,9 +420,7 @@ define :background2 do
       play :e5,sustain:0.75,amp:0.25
       sleep 2
       play :f5,sustain:0.5,amp:0.25
-      sleep 2
-      
-      
+      sleep 2 
     end
     stop
   end
@@ -471,13 +446,11 @@ define :background3 do
       play :e3,amp:2
       sleep 0.5
       play :e3,amp:2
-      sleep 1
-      
+      sleep 1 
     end
     stop
   end
 end
-
 define :backgroundb do
   live_loop :backgroundb do
     3.times do
@@ -545,8 +518,8 @@ define :background2b do
       play :e5,sustain:0.75,amp:0.5
       sleep 2
       play :f5,sustain:0.5,amp:0.5
-      sleep 2
-       end
+      sleep 2    
+    end
     stop
   end
 end
@@ -578,7 +551,6 @@ define :background3b do
   end
 end
 use_bpm 60
-
 with_fx :compressor do
   start
 end
@@ -587,16 +559,20 @@ with_fx :compressor do
   intro
 end
 sleep 0.4
-with_fx :autotuner do
-  intro2
-end
+intro2
 sleep 30.6
-with_fx :compressor do
-  main
-end
+main
 sleep 1
 with_fx :compressor do
-  background
+  live_loop :b do
+    8.times do
+      background :a3, :f3, :d3, :b2
+      background :g3, :e3, :c3, :a2
+      background :f3, :d3, :b2, :g2
+      background :g3, :e3, :c3, :a2
+    end
+    stop
+  end
 end
 with_fx :compressor do
   background2
@@ -630,6 +606,4 @@ with_fx :compressor do
   background3b
 end
 sleep 59
-with_fx :compressor do
-  done
-end
+done
