@@ -1,0 +1,182 @@
+use_bpm 79
+sleeps = [0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5,0.75,1.5,0.25,1.5]
+syns = [:c7,:c6,:a5,:b5]
+x = 0
+y = 0
+z = 0
+define :introsample do
+  1.times do
+    sample "C:/Users/owen_saenz/Downloads/See You Again (DIY Acapella) (HQ) - Tyler, The Creator.wav"
+  end
+end
+define :vocals do|a,b,c,d,e,f,g,h,i,j|
+  play :e5,amp:3
+  sleep 0.25
+  play :d5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :d5,amp:3
+  sleep 0.25
+  play :e5,amp:3
+  sleep 1.5
+  play :c5,amp:3
+  sleep 0.75
+  play :c5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :d5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :d5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :d5,amp:3
+  sleep 0.25
+  play :e5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 2
+  play :c5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :d5,amp:3
+  sleep 0.25
+  play :c5,amp:3
+  sleep 0.25
+  play :d5,amp:3
+  sleep 0.25
+  play :a4,amp:3
+  sleep 2.5#
+  play a,amp:3
+  sleep 0.25
+  play b,amp:3
+  sleep 0.25
+  play c,amp:3
+  sleep 0.25
+  play d,amp:3
+  sleep 0.25
+  play e,amp:3
+  sleep 0.25
+  play f,amp:3
+  sleep 0.25
+  play g,amp:3
+  sleep 0.25
+  play h,amp:3
+  sleep 0.25
+  play i,amp:3
+  sleep 0.25
+  play j,amp:3
+  sleep 2.25 #
+end
+define :drums do
+  live_loop :eight0eight do
+    32.times do
+      sample :drum_heavy_kick,amp:x,sustain:3
+      sleep sleeps[y]
+      x = x+0.09
+      y = y+1
+    end
+    32.times do
+      sample :drum_heavy_kick,amp:3,sustain:3
+      sleep sleeps[y]
+      y = y+1
+    end
+    stop
+  end
+end
+define :syn do
+  live_loop :synn do
+    use_synth :blade
+    2.times do
+      4.times do
+        play syns[z],sustain:3.5
+        sleep 4
+        z = z+1
+      end
+      z=0
+    end
+    stop
+  end
+end
+define :pian do
+  live_loop :pianoo do
+    use_synth :piano
+    7.times do
+      play :e5
+      play :c5
+      play :a4
+      play :f4
+      sleep 1
+      play :e5
+      play :c5
+      play :a4
+      play :f4
+      sleep 1
+      play :e5
+      play :c5
+      play :a4
+      play :f4
+      sleep 1
+      play :e5
+      play :c5
+      play :a4
+      play :f4
+      sleep 1
+      play :c5
+      play :a4
+      play :f4
+      play :d4
+      sleep 1
+      play :c5
+      play :a4
+      play :f4
+      play :d4
+      sleep 1
+      play :c5
+      play :a4
+      play :f4
+      play :d4
+      sleep 1
+      play :c5
+      play :a4
+      play :f4
+      play :d4
+      sleep 1
+    end
+    stop
+  end
+end
+define :outrosample do
+  1.times do
+    sample "C:/Users/owen_saenz/Downloads/outroreal.wav",amp:3
+  end
+end
+introsample
+sleep 4.25
+drums
+sleep 8
+pian
+sleep 23
+with_fx :compressor do
+  live_loop :stuff do
+    use_synth :piano
+    1.times do
+      vocals :e5,:f5,:f5,:f5,:g5,:e5,:f5,:f5,:f5,:f5
+      vocals :a4,:a4,:a4,:a4,:b4,:a4,:g4,:g4,:g4,:g4
+    end
+    stop
+  end
+end
+sleep 1
+syn
+sleep 30.5
+outrosample
