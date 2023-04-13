@@ -420,7 +420,7 @@ define :background2 do
       play :e5,sustain:0.75,amp:0.25
       sleep 2
       play :f5,sustain:0.5,amp:0.25
-      sleep 2 
+      sleep 2
     end
     stop
   end
@@ -446,7 +446,7 @@ define :background3 do
       play :e3,amp:2
       sleep 0.5
       play :e3,amp:2
-      sleep 1 
+      sleep 1
     end
     stop
   end
@@ -481,7 +481,7 @@ define :backgroundb do
 end
 define :background2b do
   live_loop :b2b do
-    4.times do
+    3.times do
       use_synth :dsaw
       play :a5, sustain:0.5,amp:0.5
       sleep 1
@@ -518,7 +518,7 @@ define :background2b do
       play :e5,sustain:0.75,amp:0.5
       sleep 2
       play :f5,sustain:0.5,amp:0.5
-      sleep 2    
+      sleep 2
     end
     stop
   end
@@ -605,5 +605,5 @@ end
 with_fx :compressor do
   background3b
 end
-sleep 59
+sleep 43
 done
