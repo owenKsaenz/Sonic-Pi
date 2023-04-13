@@ -4,6 +4,7 @@ syns = [:c7,:c6,:a5,:b5]
 x = 0
 y = 0
 z = 0
+a = 0
 define :introsample do
   1.times do
     sample "C:/Users/owen_saenz/Downloads/See You Again (DIY Acapella) (HQ) - Tyler, The Creator.wav"
@@ -160,6 +161,15 @@ define :outrosample do
     sample "C:/Users/owen_saenz/Downloads/outroreal.wav",amp:3
   end
 end
+define :done do
+  x = 3.4
+  34.times do
+    sample :drum_cymbal_closed,amp:x
+    sleep 0.1
+    x = x - 0.1
+  end
+  sample :drum_splash_hard,amp:3
+end
 introsample
 sleep 4.25
 drums
@@ -178,5 +188,8 @@ with_fx :compressor do
 end
 sleep 1
 syn
-sleep 30.5
+sleep 30.25
 outrosample
+sleep 19.25
+use_bpm 60
+done
