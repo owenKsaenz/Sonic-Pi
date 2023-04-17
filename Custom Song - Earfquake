@@ -453,7 +453,7 @@ define :background3 do
 end
 define :backgroundb do
   live_loop :backgroundb do
-    3.times do
+    2.times do
       use_synth :piano
       play :a3,amp:3
       play :f3,amp:3
@@ -481,7 +481,7 @@ define :backgroundb do
 end
 define :background2b do
   live_loop :b2b do
-    3.times do
+    2.times do
       use_synth :dsaw
       play :a5, sustain:0.5,amp:0.5
       sleep 1
@@ -605,5 +605,5 @@ end
 with_fx :compressor do
   background3b
 end
-sleep 43
+sleep 27
 done
