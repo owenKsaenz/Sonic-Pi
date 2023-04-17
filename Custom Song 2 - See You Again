@@ -112,45 +112,45 @@ define :pian do
   live_loop :pianoo do
     use_synth :piano
     7.times do
-      play :e5
-      play :c5
-      play :a4
-      play :f4
+      play :e5,amp:0.7
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
       sleep 1
-      play :e5
-      play :c5
-      play :a4
-      play :f4
+      play :e5,amp:0.7
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
       sleep 1
-      play :e5
-      play :c5
-      play :a4
-      play :f4
+      play :e5,amp:0.7
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
       sleep 1
-      play :e5
-      play :c5
-      play :a4
-      play :f4
+      play :e5,amp:0.7
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
       sleep 1
-      play :c5
-      play :a4
-      play :f4
-      play :d4
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
+      play :d4,amp:0.7
       sleep 1
-      play :c5
-      play :a4
-      play :f4
-      play :d4
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
+      play :d4,amp:0.7
       sleep 1
-      play :c5
-      play :a4
-      play :f4
-      play :d4
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
+      play :d4,amp:0.7
       sleep 1
-      play :c5
-      play :a4
-      play :f4
-      play :d4
+      play :c5,amp:0.7
+      play :a4,amp:0.7
+      play :f4,amp:0.7
+      play :d4,amp:0.7
       sleep 1
     end
     stop
